@@ -15,7 +15,7 @@ This RPG game project is still in its alpha stage. It allows players to choose f
 
 ## How to Play
 
-1. Run the Python script `rpg_game.py`.
+1. Run the Python script `counting.py`.
 2. Choose a class from the available options.
 3. Navigate through the dungeon by selecting actions such as proceeding, using items, or checking inventory.
 4. Engage in combat when encountering enemies and strategize your moves to defeat them.
