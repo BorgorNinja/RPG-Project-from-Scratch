@@ -4,16 +4,18 @@ count = 0
 goal = 10
 playerHP = 100
 maxplayerHP = 100
-RPGWeapons = ["Sword", "Rod", "Shield"]
-RPGClass = ["Warrior", "Mage", "Paladin"]
+RPGWeapons = ["Sword", "Rod", "Dagger"]
+RPGClass = ["Warrior", "Mage", "Rogue"]
 RPGWeaponDamage = [10,5,1]
 RPGWeaponDefense = [5,2,15]
 RPGChoice = [] 
-RPGMobs = ["Slime","Big Slime","Red Slime"]
+RPGMobs = ["Slime","Big Slime","Small Red Slime"]
 RPGMobsHP = [15,25,10]
 RPGMobsDamage = [2,5,7]
 Levels = [1,2,3]
 dice = [0,1,2]
+RPGMobsRunChance = [20,80,10]
+PlayerRunChance = [25,15,90]
 def rollDice():
     global diceValue
     diceValue = random.choice(dice)
@@ -68,12 +70,24 @@ def main():
                         print(f"{RPGClass[choice]} took a beating from enemy {currentEnemy} and sustained {reducedEnemyDamage}!")
                     elif (playerMove == "c") or (playerMove == "C"):
                         #implement item run system here
-                        pass
+                        print(f"{RPGClass[choice]} tried to run and...")
+                        if (PlayerRunChance >= RPGMobsRunChance):
+                            print("Successfully ran away!")
+                            break
+                        else:
+                            print("failed to escape!")
                 if (currentPlayerHP < 1):
                     print("You are dead")
                     break
                 elif (currentEnemyHP < 1):
                     print("You won!")
+        elif (playerChoice == "B") or (playerChoice == "b"):
+            #implement using items here
+            print("You're not holding any item with you!")
+        elif (playerChoice == "C") or (playerChoice == "c"):
+            #Check inventory
+            print("You don't have a bag!")
+            
 
 if __name__ == "__main__":
     main()
